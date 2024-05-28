@@ -1,0 +1,150 @@
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    background-color: #fbf6ef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideInFromRight 1s ease, backgroundAnimation 10s infinite alternate;
+    height: 100vh; /* Set body height to cover the viewport */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+}
+
+.background-object {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    animation: moveUpDown 3s ease-in-out infinite alternate, rotate 5s linear infinite;
+}
+
+.object1 {
+    top: 30%;
+    left: 10%;
+}
+
+.object2 {
+    top: 70%;
+    left: 80%;
+}
+
+.object3 {
+    top: 50%;
+    left: 50%;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+body {
+    background-color: #fbf6ef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideInFromRight 1s ease;
+}
+
+#quick_meet_logo {
+    margin-top: 50px;
+    text-align: center;
+    animation: slideInFromLeft 1s ease;
+}
+
+#quick_meet_logo h1 {
+    font-size: 6vw;
+    color: #393e41;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+}
+
+#quick_meet_short_info {
+    font-size: 2vw;
+    color: #393e41;
+    text-align: center;
+    margin: 20px 0;
+    max-width: 80%;
+    animation: slideInFromLeft 1s ease;
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+}
+
+.buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInFromRight 1s ease;
+}
+
+.each_button {
+    font-size: 1.8vw;
+    margin: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #dce0d9;
+    color: #393e41;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+}
+
+.each_button:hover {
+    transform: scale(1.1);
+}

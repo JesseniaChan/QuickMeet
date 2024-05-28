@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/find_space.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Available Meetings</h1>
+        {% for index, room in enumerate(room_names) %}
+        <button class="container_button" onclick="togglePopup('{{ index }}')">
+            <div class="body_container">
+                <div class="meeting_name">
+                    Name: {{ room }} | Room: {{ index + 1}}
+                </div>
+                <div class="created_by">
+                    Created By: {{ created_by[index] }}
+                </div>
+                <!-- <div class="tags">
+                    <div class="each_tag">Tag1</div>
+                    <div class="each_tag">Tag2</div>
+                    <div class="each_tag">Tag3</div>
+                </div> -->
+                <div id="popup{{ index }}" class="popup">
+                    <div class="full_content">
+                        <div class="meeting_name">
+                            Name: {{ room }} | Room: {{ index + 1}}
+                        </div>
+                        <div class="created_by">
+                            Created By: {{ created_by[index] }}
+                        </div>
+                        <!-- <div class="tags" style="display: flex; flex-direction: row; justify-content: center;">
+                            <div class="each_tag">Tag1</div>
+                            <div class="each_tag">Tag2</div>
+                            <div class="each_tag">Tag3</div>
+
+                        </div> -->
+                        <br>
+                        <div>
+                            Description: {{ descriptions[index] }}
+                        </div>
+                        <a href="{{links[index]}}" style="font-size: 16px; margin: 15px;">Link to the Meeting </a>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <div id="popupOverlay{{ index }}" class="popupOverlay" onclick="togglePopup()"></div>
+        {% endfor %}
+    </body>
+    <script>
+        function togglePopup(index) {
+            var popup = document.getElementById('popup' + index);
+            var overlay = document.getElementById('popupOverlay' + index);
+
+            if (popup.style.display === 'block') {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            } else {
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        }
+
+        function closePopup() {
+            var popup = document.getElementById('popup' + index);
+            var overlay = document.getElementById('popupOverlay' + index);
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        document.addEventListener('click', function (event) {
+            var popup = document.getElementById('popup' + index);
+            var overlay = document.getElementById('popupOverlay' + index);
+            var container = document.querySelector('.container_button');
+
+            if (!container.contains(event.target) && !popup.contains(event.target)) {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,152 @@
+h1 {
+    font-size: 6vw;
+    text-align: center;
+}
+#quick_meet_logo {
+    font-size: 5vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    color: #393e41;
+    margin: 15px;
+    margin-top: 50px;
+}
+
+#quick_meet_short_info {
+    min-width: 2.5vw;
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    color: #393e41;
+    margin: 35px;
+    max-width: 2000px;
+}
+
+.buttons_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.each_button {
+    display: flex;
+    align-items: center;
+    font-size: 2.5vw;
+    justify-content: center;
+    margin: 10px;
+    min-width: 150px;
+    max-width: 250px;
+    height: 15vh;
+    border-radius: 15px;
+    background-color: #dce0d9;
+    transition: transform 1s ease;
+}
+
+.each_button:hover {
+    transform: scale(1.1);
+}
+
+/*
+ead7c3 - brown
+fbf6ef - white
+dce0d9 - gray
+393e41 - font
+*/
+body {
+    background-color: lightblue;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.body_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px
+}
+
+.meeting_name {
+    font-size: 26px;
+    margin: 10px;
+    color: #393e41;
+}
+
+.created_by {
+    font-size: 22px;
+    color: #393e41;
+}
+
+.tags {
+    margin: 0;
+    padding: 0;
+}
+
+.each_tag {
+    margin: 10px;
+    font-size: 20px;
+    color: #393e41;
+}
+
+.container_button {
+    width: 350px;
+    height: 350px;
+    opacity: 100;
+    border-radius: 15px;
+    max-width: 1440px;
+    margin: 30;
+    background-color: #dce0d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+/* Your existing CSS styles */
+
+.popupOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fbf6ef;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.full_content {
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    border: solid #393e41 1px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}

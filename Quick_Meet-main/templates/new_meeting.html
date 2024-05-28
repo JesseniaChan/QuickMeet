@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/meeting.css">
+    <script src="../static/js/app.js" defer></script>
+    <title>Create New Meeting</title>
+  </head>
+  <body>
+    <!-- <a href="/"><button class="each_button new_meeting_button">Home</button></a> -->
+
+    <h2>Create a New Meeting</h2>
+    <form id="meeting_form" action="/new_meeting" method="POST">
+      <label for="meeting_name" id="meeting_name_label">Study Subject:</label><br>
+      <input type="text" id="meeting_name" name="meeting_name" required><br><br>
+      <label for="user" id="user">Creator's Name:</label><br>
+      <input type="text" id="creator_name" name="creator_name" required><br><br>
+      <label for="description" id="description_label">Description:</label><br>
+      <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+      <!--
+      <label for="tag">Tags</label>
+      <p>Press comma or click the add button to create a tag.</p>
+      <div class="input-container">
+          <input type="text" id="tag" name="tag" placeholder="Enter tags . . ." required>
+          <button id="add-button" name="Create_Tag" value = "Create Tag">Add</button>
+      </div>
+      <div class="tag-container">
+      </div>-->
+      <button type="submit" name="Create_Meeting" id="create_meeting_button" value="Create Meeting">Create Meeting</button>
+  </form>
+  <br>
+  </body>
+</html>

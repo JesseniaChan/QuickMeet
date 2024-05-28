@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Google Meet Space</title>
+    <link rel="stylesheet" href="../static/css/space_created.css">
+</head>
+    <body>
+        <h1>Join Space</h1>
+
+        <button class="container_button" onclick="togglePopup()">
+            <div class="body_container">
+                <div class="meeting_name">
+                    Name: {{ meeting }}
+                </div>
+                <div class="created_by">
+                    Created By: {{ user_name }}
+                </div>
+                <!-- <div class="tags">
+                    <div class="each_tag">Tag1</div>
+                    <div class="each_tag">Tag2</div>
+                    <div class="each_tag">Tag3</div>
+                </div> -->
+                <div id="popup" class="popup">
+                    <div class="full_content">
+                        <div class="meeting_name">
+                            Name: {{ meeting }}
+                        </div>
+                        <div class="created_by">
+                            Created By: {{ user_name }}
+                        </div>
+                        <!-- <div class="tags" style="display: flex; flex-direction: row; justify-content: center;">
+                            <div class="each_tag">Tag1</div>
+                            <div class="each_tag">Tag2</div>
+                            <div class="each_tag">Tag3</div>
+                        </div> -->
+                        <br>
+                        <div>
+                            Description: {{ description }}
+                        </div>
+                        <a href="{{ meeting_uri }}" style="font-size: 16px; margin: 15px;">Link to the Meeting </a>
+                    </div>
+                </div>
+            </div>
+        </button>
+        <div class = 'pdf'>
+            <form action="/generate_pdf" method="get">
+                <button type="submit">Study Guide</button>
+            </form>
+        </div>
+        <div id="popupOverlay" class="popupOverlay" onclick="togglePopup()"></div>
+    </body>
+    <script>
+        function togglePopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('popupOverlay');
+
+            if (popup.style.display === 'block') {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            } else {
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        }
+
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('popupOverlay');
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        document.addEventListener('click', function (event) {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('popupOverlay');
+            var container = document.querySelector('.container_button');
+
+            if (!container.contains(event.target) && !popup.contains(event.target)) {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+        });
+    </script>
+</html>
